@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+
 bool check(string s){
     stack<char>st;
     for(char c:s){
@@ -8,11 +9,11 @@ bool check(string s){
         }else if(c=='b'){
             st.push('c');
         }else if(c=='c'){
-            if(st.empty()||st.top()!='c'){
+            if(st.empty() || st.top()!='c'){
                 return false;
             }
             st.pop();
-            if(st.top()!='b'||st.empty()){
+            if(st.empty() || st.top()!='b'){
                 return false;
             }
             st.pop();
@@ -20,6 +21,7 @@ bool check(string s){
     }
     return st.empty();
 }
+
 int main(){
     int t;
     cin >> t;
