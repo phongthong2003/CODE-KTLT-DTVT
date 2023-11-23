@@ -34,8 +34,7 @@ int main(){
     cin.ignore();
     while(t--){
         string s1, s2;
-        getline(cin, s1);
-        getline(cin, s2);
+        cin >> s1 >> s2;
         queue<int> q1 = clear_characters(s1);
         queue<int> q2 = clear_characters(s2);
         cout << check(q1, q2) << endl;
