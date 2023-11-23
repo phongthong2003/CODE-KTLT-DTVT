@@ -37,7 +37,7 @@ int main(){
         cin >> s1 >> s2;
         queue<int> q1 = clear_characters(s1);
         queue<int> q2 = clear_characters(s2);
-        cout << check(q1, q2) << endl;
+         cout << check(q1, q2) << endl;
     }
     return 0;
 }
