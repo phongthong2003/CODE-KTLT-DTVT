@@ -15,14 +15,11 @@ bool check(string s){
 int main(){
     int t;
     cin >> t;
+    cin.ignore();
     while(t--){
         string s;
         getline(cin,s);
-        if(check(s)){
-            cout << 1 << endl;
-        }else{
-            cout << 0 << endl;
-        }
+        cout << check(s) << endl;
     }
     return 0;
 }
