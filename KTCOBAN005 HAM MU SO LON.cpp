@@ -1,26 +1,35 @@
-#include"bits/stdc++.h"
-#define ll long long
+#include<bits/stdc++.h>
 using namespace std;
-const ll mod = 1e9+7;
-ll power(ll a, ll b , ll m){
-	if(b==0){
-		return 1;
+#define ll long long
+#define mod 1000000007
+ll modul(string a,ll b){
+	ll ans=0;
+	for(char c:a){
+		ans=(ans*10+c-'0')%b;
 	}
+	return ans;
+}
+ll power(ll a,ll b){
+	if(b==0) return 1;
+   ll res=power(a,b/2);
 	if(b%2==0){
-		ll half = power(a,b/2,m)%m;
-		return (half*half)%m;
-	}else{
-		return(a%m*power(a,b-1,m))%m;
+		return ((res%mod)*(res%mod))%mod;
+	}
+	else{
+		return (((res%mod)*(res%mod))%mod*(a%mod))%mod;
 	}
 }
 int main(){
-	int t;
-	cin >> t;
-	while(t--){
-		ll a,b;
-		cin >> a >> b;
-		ll ans = power(a%mod,b%(mod-1),mod);
-		cout << ans << endl;
-	}
-	return 0;
+     int t;
+     cin>>t;
+     while(t--){
+    string a,b;
+    cin>>a>>b;
+    ll x=modul(a,mod);
+    ll y=modul(b,mod-1);
+    cout<<power(x,y)<<"\n";
+
+	 }
+
+   return 0;
 }
