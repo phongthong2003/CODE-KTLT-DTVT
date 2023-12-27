@@ -15,8 +15,11 @@ int main(){
 			}
 			s="";
 		}
+		bool first = true;
 		for(int i=0;i<10;i++){
-			cout<<arr[i]<<" ";
+			if (!first) cout << " ";
+			cout<<arr[i];
+			first = false;
 		}
 		cout<<"\n";
 	}
