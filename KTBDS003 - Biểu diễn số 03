@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	int t;
+	cin>>t;
+	while(t--){
+		int n,k;
+		cin>>n>>k;
+		if(n<k){
+			cout<<0<<"\n";
+		}
+		else if(n==k){
+			cout<<1<<"\n";
+		}
+		else{
+			n=n-1;
+			k=k-1;
+		 long long int res = 1;
+		    for ( int i = 1; i <= k ; i ++ , n-- )
+		    {
+		        res = res*n/i;
+		    }
+		   cout<<res<<"\n";
+}
+
+		}
+	}
