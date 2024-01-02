@@ -1,31 +1,27 @@
-#include"bits/stdc++.h"
+#include<bits/stdc++.h>
 using namespace std;
 #define ll long long
-bool check(ll p, ll n){
-	ll temp = p, dem = 0, f = 5;
-	while(f<= temp){
-		dem+=temp/f;
-		f*=5;
+ll count(ll n){
+	ll cnt=0;
+	for(ll i=5;i<=n;i*=5){
+		cnt+=n/i;
 	}
-	return (dem >= n);
+	return cnt;
 }
-int print(ll n){
-	if(n==1) return 5;
-	ll low = 0;
-	ll high = 5*n;
-	while(low<high){
-		ll mid = (low+high)/2;
-		if(check(mid,n)) high = mid;
-		else low = mid+1;
-	}
-	return low;
+ll solve(ll n){
+	ll l=0, r=n*5;
+	while(l<r){
+		ll m=(l+r)/2;
+		ll z=count(m);
+		if(z<n) l=m+1;
+		else r=m;
+	} 
+	return l;
 }
-int main(){
-	int t; cin >> t;
+main(){
+	int t;cin>>t;
 	while(t--){
-		ll n;
-		cin >> n;
-		cout << print(n) << endl;
+		ll n;cin>>n;
+		cout<<solve(n)<<endl;
 	}
-	return 0;
 }
